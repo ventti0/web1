@@ -17,7 +17,7 @@ import web.service.LoginService;
 
 @Controller
 @RequestMapping(value="/login")
-public class LoginController {
+public class LoginController { 
 	
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 	
