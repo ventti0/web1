@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="web.dao.face.LoginDao">
+	<select id="selectCntLogin" parameterType="web.dto.Login" resultType="int">
+		SELECT COUNT(*) FROM logintb
+		WHERE 1=1
+		AND id=#{id}
+		AND pw=#{pw}
+	</select>
+	
+	<insert id="insertUser" parameterType="web.dto.Login">
+		INSERT INTO logintb(id, pw, email, phone)
+		VALUES(#{id}, #{pw}, #{email}, #{phone})
+	</insert>
+	
+	<select id="selectJoinChk" parameterType="web.dto.Login" resultType="int">
+		SELECT COUNT(*) FROM logintb
+		WHERE id=#{id}
+	</select>
+	
+	<select id="selectLoginById" parameterType="web.dto.Login" resultType="web.dto.Login">
+		SELECT * FROM logintb
+		WHERE id=#{id}
+	</select>
+<!-- 	<select id="selectAll" resultType="dto.Emp"> -->
+<!-- 		SELECT -->
+<!-- 			empno, -->
+<!-- 			ename, -->
+<!-- 			job, -->
+<!-- 			mgr, -->
+<!-- 			hiredate, -->
+<!-- 			sal, -->
+<!-- 			comm, -->
+<!-- 			deptno -->
+<!-- 		FROM emp -->
+<!-- 		ORDER BY empno -->
+<!-- 	</select> -->
+	
+<!-- 	<select id="selectByEmpNo" -->
+<!-- 	 resultType="dto.Emp" parameterType="dto.Emp"> -->
+<!-- 	 	SELECT -->
+<!-- 	 		empno, -->
+<!-- 			ename, -->
+<!-- 			job, -->
+<!-- 			mgr, -->
+<!-- 			hiredate, -->
+<!-- 			sal, -->
+<!-- 			comm, -->
+<!-- 			deptno -->
+<!-- 		FROM emp -->
+<!-- 	 	WHERE empno = #{empno }	 	 -->
+<!-- 		ORDER BY empno -->
+<!-- 	</select> -->
+	
+<!-- 	<insert id="insertEmp" parameterType="dto.Emp"> -->
+<!-- 	 	INSERT INTO emp ( empno, ename, job, mgr, hiredate, sal, comm, deptno ) -->
+<!-- 	 	VALUES (#{empno }, #{ename }, #{job }, #{mgr }, #{hiredate }, #{sal }, #{comm }, #{deptno }) -->
+<!-- 	</insert> -->
+	
+<!-- 	<delete id="deleteByEmpNo" parameterType="dto.Emp"> -->
+<!-- 	 	DELETE emp -->
+<!-- 	 	WHERE empno = #{empno }	 	 -->
+<!-- 	</delete> -->
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
